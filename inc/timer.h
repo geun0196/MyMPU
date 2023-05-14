@@ -1,8 +1,12 @@
 #pragma once
 
+#include <iostream>
 #include <chrono>
 #include <thread>
 #include <string>
+#include <ctime>
+#include <iomanip>
+#include <sstream>
 
 using namespace std::chrono;
 

@@ -6,7 +6,6 @@
 #include <deque>
 #include <fstream>
 
-#define MAXTEMP temp_min_max.second
 #define MAXACCELX accel_x_min_max.second
 #define MAXACCELY accel_y_min_max.second
 #define MAXACCELZ accel_z_min_max.second
@@ -17,7 +16,6 @@
 #define MAXMAGY mag_y_min_max.second
 #define MAXMAGZ mag_z_min_max.second
 
-#define MINTEMP temp_min_max.first
 #define MINACCELX accel_x_min_max.first
 #define MINACCELY accel_y_min_max.first
 #define MINACCELZ accel_z_min_max.first
@@ -29,17 +27,12 @@
 #define MINMAGZ mag_z_min_max.first
 
 int append_readings(std::string time_date,
-                    double temp,
                     double accel_x,
                     double accel_y,
                     double accel_z,
                     double gyro_x,
                     double gyro_y,
                     double gyro_z
-                    /*,
-                    double mag_x,
-                    double mag_y,
-                    double mag_z
-                    */);
+);
 
 void get_stats();
