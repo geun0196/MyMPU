@@ -1,17 +1,6 @@
 Stats: 
 
 MAXIMUMS
-Acceleration in x: 19.56 at: Sun May 14 14:57:19 2023
-Acceleration in y: 9.40542 at: Sun May 14 14:56:54 2023
-Acceleration in z: 19.36 at: Sun May 14 14:57:19 2023
-Rate of rotation in x: 250.13 at: Sun May 14 14:57:02 2023
-Rate of rotation in y: 162.863 at: Sun May 14 14:57:20 2023
-Rate of rotation in z: 250.13 at: Sun May 14 14:57:19 2023
-
+Acceleration in x: 0 at: Acceleration in y: 0 at: Acceleration in z: 0 at: Rate of rotation in x: 0 at: Rate of rotation in y: 0 at: Rate of rotation in z: 0 at: 
 MINIMUMS
-Acceleration in x: -19.4269 at: Sun May 14 14:55:57 2023
-Acceleration in y: -14.8901 at: Sun May 14 14:55:57 2023
-Acceleration in z: -4.24545 at: Sun May 14 14:57:23 2023
-Rate of rotation in x: -250.137 at: Sun May 14 14:56:49 2023
-Rate of rotation in y: -162.305 at: Sun May 14 14:57:23 2023
-Rate of rotation in z: -250.137 at: Sun May 14 14:56:03 2023
+Acceleration in x: 0 at: Acceleration in y: 0 at: Acceleration in z: 0 at: Rate of rotation in x: 0 at: Rate of rotation in y: 0 at: Rate of rotation in z: 0 at: 

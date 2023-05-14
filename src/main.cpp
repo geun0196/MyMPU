@@ -19,7 +19,7 @@ int main(int argc, char* argv[])
     }
 
     //variables commonly used in main()
-    int device_handle, mag_device_handle, wake_handle, append_handle;
+    int device_handle, mag_device_handle, wake_handle;
     std::string current_time;
     double accel_x, accel_y, accel_z;
     double gyro_x, gyro_y, gyro_z;
@@ -56,34 +56,36 @@ int main(int argc, char* argv[])
     set_gyro(device_handle,250);
     set_accel(device_handle,2);
     
+    double velocity_x = 0.0; 
+    double velocity_y = 0.0; 
+    double velocity_z = 0.0;
+    double time_interval = 0.1; // unit : sec
+    
     //infinite loop to get readings from device
     while (true)
     {
         //get readings
-        current_time = get_time();
-        accel_x = get_accel_x(device_handle);
-        accel_y = get_accel_y(device_handle);
-        accel_z = get_accel_z(device_handle);
+        accel_x = -(get_accel_x(device_handle));
+        accel_y = -(get_accel_y(device_handle));
+        accel_z = -(get_accel_z(device_handle));
         gyro_x = get_gyro_x(device_handle);
         gyro_y = get_gyro_y(device_handle);
         gyro_z = get_gyro_z(device_handle);
         
+        // velocity
+        velocity_x += accel_x * time_interval;
+        velocity_y += accel_y * time_interval;
+        velocity_z += accel_z * time_interval;
+    
         //output readings
-        std::cout <<"Time and date: "<<current_time;
         std::cout << "Accel:  x: "<<accel_x<<"  y: "<<accel_y<<"  z: "<<accel_z<<"  [m/s^2]\n";
         std::cout << "Gyro:  x: "<<gyro_x<<"  y: "<<gyro_y<<"  z: "<<gyro_z<<"  [deg/sec]\n";
+        std::cout << "Velocity:  x: " << velocity_x << "  y: " << velocity_y << "  z: " << velocity_z << "  [m/s]\n";
         std::cout <<"\n";
-        
-        append_handle = append_readings(current_time,accel_x,accel_y,accel_z,gyro_x,
-                                        gyro_y,gyro_z);       
-        if (append_handle < 0)
-        {
-            std::cout<< "Unable to append readings\n";
-        }
         
         get_stats();
         
-        device_wait(100); //sleep for 1 sec
+        device_wait(100); 
     }
     
     return 0;
