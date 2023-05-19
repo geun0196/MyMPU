@@ -26,10 +26,10 @@
 //defines gravitational acceleration at the equator in m/s^2
 #define GRAVITATIONAL_CONST 9.7803
 
-double get_accel_x(int device_handle);
-double get_accel_y(int device_handle);
-double get_accel_z(int device_handle);
+float get_accel_x(int device_handle);
+float get_accel_y(int device_handle);
+float get_accel_z(int device_handle);
 
-double scale_accel(int raw_accel);
+float scale_accel(int raw_accel);
 
 void set_accel(int device_handle, int scale_val);

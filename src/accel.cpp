@@ -1,5 +1,5 @@
 #include "../inc/accel.h"
-double accel_scale_factor = 0;
+float accel_scale_factor = 0;
 void set_accel(int device_handle, int scale_val ){
 
     switch (scale_val)
@@ -23,33 +23,33 @@ void set_accel(int device_handle, int scale_val ){
 }
 
 
-double get_accel_x(int device_handle){
+float get_accel_x(int device_handle){
     int raw_accel_x;
-    double scaled_accel_x;
+    float scaled_accel_x;
     raw_accel_x = read_word(device_handle, ACCEL_XOUT_H_ADDR);
     scaled_accel_x = scale_accel(raw_accel_x);
     return scaled_accel_x;
 }
 
-double get_accel_y(int device_handle){
+float get_accel_y(int device_handle){
     int raw_accel_y;
-    double scaled_accel_y;
+    float scaled_accel_y;
     raw_accel_y = read_word(device_handle, ACCEL_YOUT_H_ADDR);
     scaled_accel_y = scale_accel(raw_accel_y);
     return scaled_accel_y;
 }
 
-double get_accel_z(int device_handle){
+float get_accel_z(int device_handle){
     int raw_accel_z;
-    double scaled_accel_z;
+    float scaled_accel_z;
     raw_accel_z = read_word(device_handle, ACCEL_ZOUT_H_ADDR);
     scaled_accel_z = scale_accel(raw_accel_z);
     return scaled_accel_z;
 }
 
 
-double scale_accel(int raw_accel){
-    double scaled;
+float scale_accel(int raw_accel){
+    float scaled;
     scaled = ((raw_accel / accel_scale_factor) * GRAVITATIONAL_CONST);
     return scaled;
 }
